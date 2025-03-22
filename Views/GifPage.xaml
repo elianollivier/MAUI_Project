@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage 
+    x:Class="Elian_App.Views.GifPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="GIF Demo">
+
+    <VerticalStackLayout
+        Padding="20"
+        Spacing="20"
+        VerticalOptions="Center"
+        HorizontalOptions="Center">
+
+        <Label 
+            Text="Voici un GIF animé !"
+            Style="{StaticResource Headline}"
+            HorizontalOptions="Center" />
+
+        <WebView
+            WidthRequest="300"
+            HeightRequest="300"
+            Source="https://i.giphy.com/ghXliYqQb2BMI.webp" />
+
+        <Button
+            Text="Retour Accueil"
+            Clicked="OnBackButtonClicked"
+            HorizontalOptions="Center" />
+    </VerticalStackLayout>
+
+</ContentPage>

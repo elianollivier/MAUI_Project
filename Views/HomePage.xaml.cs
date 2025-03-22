@@ -9,15 +9,29 @@ public partial class HomePage : ContentPage
         InitializeComponent();
     }
 
-    private void OnCounterClicked(object sender, EventArgs e)
+
+
+    private async void OnShowGifClicked(object sender, EventArgs e)
     {
-        count++;
+        await Shell.Current.GoToAsync(nameof(GifPage));
+    }
 
-        if (count == 1)
-            CounterBtn.Text = $"Cliqué {count} fois";
-        else
-            CounterBtn.Text = $"Cliqué {count} fois";
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
 
-        SemanticScreenReader.Announce(CounterBtn.Text);
+
+        RunAnimation();
+    }
+
+    private async void RunAnimation()
+    {
+
+        await AnimatedImage.FadeTo(1, 750);
+
+
+        await AnimatedImage.ScaleTo(1, 500);
+
+
     }
 }

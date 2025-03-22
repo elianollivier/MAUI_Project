@@ -6,10 +6,9 @@
 
     <ScrollView>
         <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
-
-            <!-- Ajout du logo en haut de la page -->
+            Padding="30,10"
+            Spacing="20"
+            x:Name="MainStack"> 
             <Image
                 Source="logo.png"
                 HeightRequest="80"
@@ -18,24 +17,53 @@
                 SemanticProperties.Description="Logo de l'application" />
 
             <Label
-                Text="Bienvenue sur l’Accueil !"
+                Text="Titre Principal"
                 Style="{StaticResource Headline}"
+                HorizontalOptions="Center"
                 SemanticProperties.HeadingLevel="Level1" />
 
             <Label
-                Text="Ceci est la page d’accueil de l’application."
+                Text="Sous-titre de la page d'accueil"
                 Style="{StaticResource SubHeadline}"
+                HorizontalOptions="Center"
                 SemanticProperties.HeadingLevel="Level2" />
 
-            <!-- Bouton compteur d’exemple (issu de l’ex-MainPage) -->
+            <HorizontalStackLayout
+                Spacing="20"
+                HorizontalOptions="Center">
+                
+                <Image
+                    Source="image1.png"
+                    WidthRequest="120"
+                    HeightRequest="120"
+                    Aspect="AspectFit"
+                    SemanticProperties.Description="Image de gauche" />
+
+                <Image
+                    Source="image2.png"
+                    WidthRequest="120"
+                    HeightRequest="120"
+                    Aspect="AspectFit"
+                    SemanticProperties.Description="Image de droite" />
+            </HorizontalStackLayout>
+
             <Button
-                x:Name="CounterBtn"
-                Text="Cliquez moi"
-                SemanticProperties.Hint="Compteur de clics"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Fill" />
+                Text="Voir le GIF"
+                Clicked="OnShowGifClicked"
+                HorizontalOptions="Center" />
+
+            <Image
+                x:Name="AnimatedImage"
+                Source="animated_image.png"
+                WidthRequest="180"
+                HeightRequest="180"
+                Aspect="AspectFit"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Opacity="0"     
+                Scale="0.5"
+                SemanticProperties.Description="Image à animer" />
 
         </VerticalStackLayout>
     </ScrollView>
-
 </ContentPage>
