@@ -24,7 +24,7 @@
                     <ViewCell>
                         <VerticalStackLayout Padding="10">
                             <Label Text="{Binding title}" FontAttributes="Bold" />
-                            <Label Text="{Binding description}" FontSize="12" />
+                            <Label Text="{Binding body}" FontSize="12" />
                         </VerticalStackLayout>
                     </ViewCell>
                 </DataTemplate>

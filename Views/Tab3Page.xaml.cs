@@ -6,7 +6,6 @@ public partial class Tab3Page : ContentPage
 {
     private ApiService _apiService = new ApiService();
 
-
     public Tab3Page()
     {
         InitializeComponent();
@@ -17,5 +16,4 @@ public partial class Tab3Page : ContentPage
         var items = await _apiService.GetDataAsync();
         ApiList.ItemsSource = items;
     }
-
 }

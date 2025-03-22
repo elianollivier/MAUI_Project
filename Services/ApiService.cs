@@ -13,7 +13,7 @@ public class ApiService
 
     public async Task<List<SimpleModel>> GetDataAsync()
     {
-        var url = "https://sampleapis.com/coffee/api/hot";
+        var url = "https://jsonplaceholder.typicode.com/posts";
         var response = await _httpClient.GetAsync(url);
         if (!response.IsSuccessStatusCode)
             return new List<SimpleModel>();
@@ -26,9 +26,8 @@ public class ApiService
 
 public class SimpleModel
 {
+    public int userId { get; set; }
     public int id { get; set; }
     public string title { get; set; }
-    public string description { get; set; }
-    public string ingredients { get; set; }
-    public string image { get; set; }
+    public string body { get; set; }
 }
