@@ -6,7 +6,8 @@ namespace Elian_App.Views;
 
 public partial class Tab2Page : ContentPage
 {
-    Tab2ViewModel vm;
+    private Tab2ViewModel vm;
+
     public Tab2Page()
     {
         InitializeComponent();

@@ -7,7 +7,7 @@ namespace Elian_App.ViewModels;
 [QueryProperty(nameof(Id), "id")]
 public class ItemDetailViewModel : BaseViewModel
 {
-    private ApiService _apiService;
+    private readonly ApiService _apiService;
 
     private int _id;
     public int Id
@@ -47,7 +47,7 @@ public class ItemDetailViewModel : BaseViewModel
         if (found != null)
         {
             Title = found.title;
-            Body = found.body;
+            Body  = found.body;
         }
     }
 }

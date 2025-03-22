@@ -2,7 +2,6 @@ using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Elian_App.Services;
 using Elian_App.Views;
-
 using System.Threading.Tasks;
 using Microsoft.Maui.Controls;
 
@@ -21,6 +20,7 @@ public class Tab2ViewModel : BaseViewModel
         _apiService = apiService;
         LoadCommand = new Command(async () => await LoadData());
         ItemTappedCommand = new Command<SimpleModel>(async (item) => await OnItemSelected(item));
+
         LoadCommand.Execute(null);
     }
 
@@ -34,8 +34,7 @@ public class Tab2ViewModel : BaseViewModel
 
     private async Task OnItemSelected(SimpleModel item)
     {
-        if (item == null)
-            return;
+        if (item == null) return;
         await Shell.Current.GoToAsync($"{nameof(ItemDetailPage)}?id={item.id}");
     }
 }

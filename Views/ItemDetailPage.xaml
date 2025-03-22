@@ -9,10 +9,8 @@
         Padding="20"
         Spacing="15"
         VerticalOptions="CenterAndExpand">
-
         <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="20" />
         <Label Text="{Binding Body}" FontSize="14" />
-
     </VerticalStackLayout>
 
 </ContentPage>

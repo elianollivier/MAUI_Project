@@ -3,10 +3,14 @@
     x:Class="Elian_App.Views.Tab2Page"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:Elian_App.ViewModels"
     xmlns:services="clr-namespace:Elian_App.Services"
     Title="Liste">
 
-    <ListView x:Name="DataList" ItemsSource="{Binding Items}">
+    <ListView x:Name="DataList"
+              ItemsSource="{Binding Items}"
+              SelectionMode="Single"
+              ItemTapped="DataList_ItemTapped">
         <ListView.ItemTemplate>
             <DataTemplate x:DataType="services:SimpleModel">
                 <ViewCell>
