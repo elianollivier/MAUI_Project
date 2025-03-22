@@ -1,0 +1,24 @@
+# Dossiers de build et fichiers intermédiaires
+bin/
+obj/
+
+# Fichiers et dossiers spécifiques à Rider
+.idea/
+*.sln.iml
+
+# Fichiers utilisateur (paramètres personnels)
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+# Fichiers et dossiers générés par Visual Studio
+.vs/
+
+# Dossier de packages NuGet (si utilisé)
+packages/
+
+# Fichiers logs et temporaires
+*.log
+*.tmp
+*.bak
