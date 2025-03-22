@@ -2,25 +2,32 @@ using Elian_App.Services;
 using Elian_App.ViewModels;
 using Microsoft.Maui.Controls;
 
-namespace Elian_App.Views;
-
-public partial class Tab2Page : ContentPage
+namespace Elian_App.Views
 {
-    private Tab2ViewModel vm;
-
-    public Tab2Page()
+    public partial class Tab2Page : ContentPage
     {
-        InitializeComponent();
-        vm = new Tab2ViewModel(new ApiService());
-        BindingContext = vm;
-    }
+        private Tab2ViewModel vm;
 
-    void DataList_ItemTapped(object sender, ItemTappedEventArgs e)
-    {
-        if (e.Item is SimpleModel item)
+        public Tab2Page()
         {
-            vm.ItemTappedCommand.Execute(item);
-            ((ListView)sender).SelectedItem = null;
+            InitializeComponent();
+            vm = new Tab2ViewModel(new ApiService());
+            BindingContext = vm;
+        }
+
+        void DataList_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            if (e.Item is SimpleModel item)
+            {
+                vm.ItemTappedCommand.Execute(item);
+                ((ListView)sender).SelectedItem = null;
+            }
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            vm.LoadCommand.Execute(null);
         }
     }
 }
