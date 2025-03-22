@@ -2,22 +2,34 @@
 <ContentPage 
     x:Class="Elian_App.Views.Tab3Page"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="API Data">
 
     <VerticalStackLayout
         Padding="20"
         Spacing="15"
-        VerticalOptions="Center">
+        VerticalOptions="CenterAndExpand">
 
-        <Label 
-            Text="Bienvenue dans l'Onglet 3 !" 
-            Style="{StaticResource Headline}"
-            HorizontalOptions="Center" />
-        
-        <Label
-            Text="Contenu de l'onglet 3..."
-            Style="{StaticResource SubHeadline}"
-            HorizontalOptions="Center" />
+        <Button
+            x:Name="BtnLoadData"
+            Text="Charger des données"
+            Clicked="BtnLoadData_Clicked" />
+
+        <ListView
+            x:Name="ApiList"
+            Margin="0,20,0,0"
+            HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <VerticalStackLayout Padding="10">
+                            <Label Text="{Binding title}" FontAttributes="Bold" />
+                            <Label Text="{Binding description}" FontSize="12" />
+                        </VerticalStackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
 
     </VerticalStackLayout>
 
