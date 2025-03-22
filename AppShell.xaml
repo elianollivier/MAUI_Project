@@ -29,6 +29,7 @@
             Icon="tab_4.png"
             ContentTemplate="{DataTemplate views:Tab4Page}" />
 
+
     </TabBar>
 
 </Shell>
