@@ -2,23 +2,20 @@
 <ContentPage 
     x:Class="Elian_App.Views.Tab2Page"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:services="clr-namespace:Elian_App.Services"
+    Title="Liste">
 
-    <VerticalStackLayout
-        Padding="20"
-        Spacing="15"
-        VerticalOptions="Center">
-
-        <Label 
-            Text="Bienvenue dans l'Onglet 2 !" 
-            Style="{StaticResource Headline}"
-            HorizontalOptions="Center" />
-        
-        <Label
-            Text="Contenu de l'onglet 2..."
-            Style="{StaticResource SubHeadline}"
-            HorizontalOptions="Center" />
-
-    </VerticalStackLayout>
+    <ListView x:Name="DataList" ItemsSource="{Binding Items}">
+        <ListView.ItemTemplate>
+            <DataTemplate x:DataType="services:SimpleModel">
+                <ViewCell>
+                    <StackLayout Padding="10">
+                        <Label Text="{Binding title}" FontAttributes="Bold"/>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 
 </ContentPage>
