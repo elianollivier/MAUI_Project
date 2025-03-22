@@ -3,13 +3,33 @@
     x:Class="Elian_App.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:Elian_App"
+    xmlns:views="clr-namespace:Elian_App.Views"
     Shell.FlyoutBehavior="Disabled"
     Title="Elian_App">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <!-- Barre d’onglets en bas -->
+    <TabBar>
+
+        <ShellContent
+            Title="Accueil"
+            Icon="tab_home.png"
+            ContentTemplate="{DataTemplate views:HomePage}" />
+
+        <ShellContent
+            Title="Onglet2"
+            Icon="tab_2.png"
+            ContentTemplate="{DataTemplate views:Tab2Page}" />
+
+        <ShellContent
+            Title="Onglet3"
+            Icon="tab_3.png"
+            ContentTemplate="{DataTemplate views:Tab3Page}" />
+
+        <ShellContent
+            Title="Onglet4"
+            Icon="tab_4.png"
+            ContentTemplate="{DataTemplate views:Tab4Page}" />
+
+    </TabBar>
 
 </Shell>
